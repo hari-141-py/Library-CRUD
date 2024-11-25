@@ -1,0 +1,65 @@
+
+
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    background-color:whitesmoke;
+    color:rgba(0,0,0,0.5);
+    font-family: "Prompt", sans-serif;
+    overflow-x:hidden;
+}
+.adbk{
+    padding:20px 20px 20px 20px;
+    background-color:rgba(0,0,0,0.1);
+    backdrop-filter: blur(18px);
+    margin-top:80px;
+    margin-bottom:80px;
+    border-radius:18px;
+}
+.image-background{
+    position: absolute;
+/*    height: 800px;*/
+/*    width: 800px;*/
+/*    overflow: hidden;*/
+/*    right:130px;*/
+/*    bottom:-100px;*/
+    top:0px;
+    z-index: -10;
+}
+#background-image {
+    width: 1580px;
+    height: 1000px;
+/*    object-fit: cover;*/
+    z-index: -10;
+}
+.btn_save{
+    background-color:black;
+    border:1px solid black;
+    border-radius:5px;
+    color:whitesmoke;
+    padding:5px 8px 5px 8px;
+    text-decoration-line:none;
+    margin-top:20px;
+    transition:0.2s ease-in;
+}
+.btn_save:hover{
+    background-color:transparent;
+    color:black;
+}
+.btn_cancel{
+    background-color:transparent;
+    border:1px solid black;
+    border-radius:5px;
+    color:black;
+    padding:5px 8px 5px 8px;
+    text-decoration-line:none;
+    margin-top:20px;
+    transition:0.2s ease-in;
+}
+.btn_cancel:hover{
+    border:1px solid red;
+    background-color:transparent;
+    color:red;
+}

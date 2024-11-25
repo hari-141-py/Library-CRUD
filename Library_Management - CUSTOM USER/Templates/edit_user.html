@@ -1,0 +1,60 @@
+{% extends 'Base_Page.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'CSS/Edit_books.css' %}">
+
+<div class="image-background">
+        <img src="{% static 'Images/grid-lines.png' %}" id="background-image">
+</div>
+
+<div class="container">
+    <div class="container-lg adbk">
+        <div class="text-center">
+            <h2>Edit User details here</h2>
+            <p class="lead">please fill out <u>new details</u> down below </p>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-lg-6">
+                <form method="POST">
+
+                {% csrf_token %}
+
+                    <label for="usename" class="form-label">Username :</label>
+                    <input type="text" class="form-control" id="usename" name="usr" placeholder="Enter new name" value="{{ viewusers.username }}">
+
+                    <label for="author" class="form-label">First name :</label>
+                    <input type="text" class="form-control" id="author" name="fname" placeholder="e.g:J. K. Rowling" value="{{ viewusers.first_name }}">
+
+                    <label for="language" class="form-label">Last name :</label>
+                    <input type="text" class="form-control" id="language" name="lname" placeholder="e.g:English" value="{{ viewusers.last_name }}">
+
+                    <label for="price" class="form-label">Email :</label>
+                    <input type="number" class="form-control" id="price" name="mail" placeholder="e.g:$100" value="{{ viewusers.email }}">
+
+                    <label for="address" class="form-label">Address :</label>
+                    <input type="number" class="form-control" id="address" name="adrs" placeholder="e.g:200" value="{{ viewusers.address }}">
+
+                    <label for="phone" class="form-label">Phone :</label>
+                    <input type="number" class="form-control" id="phone" name="ph" placeholder="e.g:200" value="{{ viewusers.phone }}">
+
+
+                    <label for="admin" class="form-label">Admin privilege :</label>
+                    <input type="number" class="form-control" id="admin" name="ad" placeholder="1 for yes 0 for no" value="{{ viewusers.is_superuser }}">
+
+
+                    <label for="user" class="form-label">User privilege :</label>
+                    <input type="number" class="form-control" id="user" name="us" placeholder="1 for yes 0 for no" value="{{ viewusers.is_user }}">
+
+                    <button type="submit" class="btn_save">Save Changes</button>
+                    <a href="{% url 'users:view_users' %}" class="btn_cancel">Discard</a>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

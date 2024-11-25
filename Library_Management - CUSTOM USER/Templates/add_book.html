@@ -1,0 +1,58 @@
+
+{% extends 'Base_Page.html' %}
+{% load static %}
+{% block content %}
+<!--    <a href="{% url 'books:add_book' %}" class="homepage">ADD BOOK</a> &nbsp;<a href="{% url 'users:home' %}" class="homepage">Back to Homepage</a>-->
+<link rel="stylesheet" href="{% static 'CSS/Add_books.css' %}">
+
+<div class="image-background">
+        <img src="{% static 'Images/grid-lines.png' %}" id="background-image">
+</div>
+
+<div class="container">
+    <div class="container-lg adbk">
+        <div class="text-center">
+            <h2>Add your book here</h2>
+            <p class="lead">please fill out each catogary down below </p>
+        </div>
+        <div class="row justify-content-center ">
+            <div class="col-lg-6">
+                <form method="POST" enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                    <label for="title" class="form-label">Title :</label>
+                    <input type="text" class="form-control" id="title" name="tit" placeholder="e.g:Harry Potter">
+
+                    <label for="author" class="form-label">Author :</label>
+                    <input type="text" class="form-control" id="author" name="auth" placeholder="e.g:J. K. Rowling">
+
+                    <label for="language" class="form-label">Language :</label>
+                    <input type="text" class="form-control" id="language" name="lang" placeholder="e.g:English">
+
+                    <label for="price" class="form-label">Price :</label>
+                    <input type="number" class="form-control" id="price" name="prc" placeholder="$100">
+
+                    <label for="pages" class="form-label">Pages :</label>
+                    <input type="number" class="form-control" id="pages" name="pge" placeholder="200">
+
+                    <label for="Image" class="form-label">Image :</label>
+                    <input type="file" class="form-control" id="Image" name="cvr">
+
+                    <label for="PDF" class="form-label">PDF :</label>
+                    <input type="file" class="form-control" id="PDF" name="pdf1">
+
+                    <label for="Details" class="form-label">Details :</label>
+                    <textarea class="form-control" id="Details" name="det" placeholder="Please enter the book details"></textarea>
+
+
+
+                    <button type="submit" id="btn11">Add Book</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

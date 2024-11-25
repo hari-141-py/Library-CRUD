@@ -1,0 +1,36 @@
+{% extends 'Base_Page.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/view_users.css' %}">
+
+<h2>View users</h2>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>username</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Statu</th>
+            <th colspan="3">CRUD</th>
+        </tr>
+        {% for i in viewusers %}
+        <tr>
+            <td>{{ i.username }}</td>
+            <td>{{ i.first_name }}</td>
+            <td>{{ i.last_name }}</td>
+            <td>{{ i.email }}</td>
+            <td>{{ i.address }}</td>
+            <td>{{ i.phone }}</td>
+            <td>Admin:[{{ i.is_superuser }}] &nbsp;&nbsp; User:[{{ i.is_user }}]</td>
+            <td>
+                <a href="{% url 'users:edit_user' i.id %}" id="btn_delete">Edit</a>
+                <a href="{% url 'users:delete_user' i.id %}" id="btn_delete">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

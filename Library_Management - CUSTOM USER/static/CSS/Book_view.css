@@ -1,0 +1,77 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    background-color:whitesmoke;
+    color:rgba(0,0,0,0.5);
+    font-family: "Prompt", sans-serif;
+    overflow-x:hidden;
+}
+.image-background{
+    position: fixed;
+/*    height: 100vh;*/
+/*    overflow: hidden;*/
+    left:0px;
+    top:0px;
+    z-index: -10;
+}
+#background-image {
+    width: 1800px;
+    height: 800px;
+    object-fit: cover;
+    z-index: -10;
+}
+
+#btn{
+    position:absolute;
+    bottom:9.5px;
+    left:140px;
+    background-color:black;
+    border:1px solid black;
+    color:white;
+    border-radius:5px;
+    padding:5px 8px 5px 8px;
+    text-decoration-line:none;
+    transition:0.2s ease-in;
+}
+#btn:hover{
+    background-color:white;
+    color:black;
+}
+.bk_vw_intro{
+    margin-bottom:100px;
+    margin-top:100px;
+    font-family: "Prompt", sans-serif;
+}
+#bk-img{
+    object-fit:contain;
+}
+#edit_book{
+    position:absolute;
+    right:15px;
+    top:15px;
+    font-size:20px;
+    transition:0.2s ease-in;
+}
+#edit_book:hover{
+    scale:1.5;
+}
+#btn_delete{
+    position:absolute;
+    bottom:10px;
+    left:200px;
+    font-size:18px;
+    background-color:white;
+    border:1px solid black;
+    color:black;
+    border-radius:5px;
+    padding:3px 5px 3px 5px;
+    text-decoration-line:none;
+    transition:0.2s ease-in;
+}
+#btn_delete:hover{
+    background-color:white;
+    border:1px solid red;
+    color:red;
+}

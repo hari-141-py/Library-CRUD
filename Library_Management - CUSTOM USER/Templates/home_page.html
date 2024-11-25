@@ -1,0 +1,60 @@
+
+{% extends 'Base_Page.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/Home_page.css' %}">
+<div class="container">
+<div>
+    <img src="{% static 'Images/book1.png' %}" id="background1">
+</div>
+<div>
+    <img src="{% static 'Images/book2.png' %}" id="background2">
+</div>
+<div>
+    <img src="{% static 'Images/book3.png' %}" id="background3">
+</div>
+<div>
+    <img src="{% static 'Images/book4.png' %}" id="background4">
+</div>
+<div>
+    <img src="{% static 'Images/book5.png' %}" id="background5">
+</div>
+<div>
+    <img src="{% static 'Images/book6.png' %}" id="background6">
+</div>
+<div class="text-center mb-5 intro">
+    {% if user.is_authenticated %}
+    <h1>WELCOME <b style="font-family: 'Londrina Sketch', sans-serif; font-weight: 400; font-size:80px;">{{ user.username }}</b></h1>
+    {% else %}
+    <h1>WELCOME TO <b><i>B</i>ook<i>B</i>ar</b></h1>
+    {% endif %}
+    {% if user.is_authenticated %}
+    <p class="mt-4">Welcome to Book Bar, your personal virtual library! A seamless solution for organizing and managing your personal book collection in a virtual space.<br> With a user-friendly interface, it allows you to upload, showcase, and manage all your favorite books in one place.<br>Book Bar makes it simple and accessible.<br> Dive into a world of knowledge, with easy navigation and powerful tools designed to enhance your reading experience.<br> Start your literary journey today!</p>
+    {% else %}
+    <p class="mt-4">Welcome to Book Bar, your personal virtual library! A seamless solution for organizing and managing your personal book collection in a virtual space.<br> With a user-friendly interface, it allows you to upload, showcase, and manage all your favorite books in one place.<br>Book Bar makes it simple and accessible.<br> Dive into a world of knowledge, with easy navigation and powerful tools designed to enhance your reading experience.<br> Start your literary journey today!</p>
+    <a href="{% url 'users:user_login' %}" class="btn-23" style="margin-top:18px; margin-bottom:18px;">
+          <span class="text">Register/Login</span>
+          <span aria-hidden="" class="marquee">Join Us</span>
+    </a>
+    {% endif %}
+</div>
+<div>
+        <div class="inro1">
+        <h2>Key Features</h2>
+        <p><i class="fa-solid fa-tag"></i> Download Books: Access thousands of titles for offline reading.</p>
+        <p><i class="fa-solid fa-tag"></i> Search Functionality: Quickly find your favorite authors or genres.</p>
+        <p><i class="fa-solid fa-tag"></i> Personalized Reading Lists: Easily update and manage your reading list.</p>
+        </div>
+        <div class="inro1">
+        <h2>Getting Started</h2>
+        <p><i class="fa-solid fa-tag"></i> Sign Up / Log In: Create an account or log in to access all features.</p>
+        <p><i class="fa-solid fa-tag"></i> Browse Collections: Navigate through different genres or featured collections.</p>
+        <p><i class="fa-solid fa-tag"></i> Read Online or Download: Choose to read directly in your browser or download &nbsp;&nbsp;&nbsp;books for offline access.</p>
+        </div>
+        <div class="mb-5 inro1">
+        <h2>Join the Community</h2>
+        <p><i class="fa-solid fa-tag"></i> Subscribe to Updates: Stay informed about new arrivals and special offers by &nbsp;&nbsp;&nbsp;subscribing to our newsletter.</p>
+        </div>
+    </div>
+</div>
+    {% endblock %}

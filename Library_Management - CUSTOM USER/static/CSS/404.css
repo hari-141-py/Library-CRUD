@@ -1,0 +1,12 @@
+.image-background{
+    position: fixed;
+    left:0px;
+    top:0px;
+    z-index: -10;
+}
+#background-image {
+    width: 1800px;
+    height: 800px;
+    object-fit: cover;
+    z-index: -10;
+}

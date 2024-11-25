@@ -1,0 +1,35 @@
+{% extends 'Base_Page.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'CSS/Book_view.css' %}">
+
+<h1 style="margin-top:100px;" class="text-center">Search Result</h1>
+
+<div class="container mb-5 mt-5">
+  <div class="row">
+    {% for i in srch %}
+    <div class="col-sm-4" >
+        <div class="card mb-3" style="width:24rem; height:195px; overflow:hidden;">
+          <div class="row g-0">
+
+            <div class="col-md-4">
+                    <img src="{{ i.cover.url }}" class="img-fluid rounded-start" alt="{{i.title}}">
+            </div>
+
+           <div class="col-md-8">
+              <div class="card-body">
+                  <a href="{% url 'books:edit_book' i.id %}" id="edit_book"><i class="fa-solid fa-pen-to-square" style="color: #333;"></i></a>
+                 <h5 class="card-title">{{i.title}}</h5>
+                  <p class="card-text" style="font-size:14px;">{{i.details}}</p>
+                  <p class="card-text"><small class="text-muted">{{i.author}}</small></p>
+                  <a href="{{ i.pdf.url }}" id="btn">Read</a>
+                  <a href="{% url 'books:delete_book' i.id %}" id="btn_delete">Delete</a>
+              </div>
+           </div>
+          </div>
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
